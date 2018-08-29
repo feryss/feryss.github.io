@@ -20,3 +20,11 @@ refresh:
 .PHONY: ssh
 ssh:
 	docker exec -u 0 -it $(APP_SERVICE_NAME) sh
+
+.PHONY: upload
+upload:
+	git add --all && git commit -m "Changement" && git push origin master
+
+.PHONY: download
+download:
+	git pull
